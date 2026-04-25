@@ -1,16 +1,63 @@
-# React + Vite
+# 🤝 DoaLink
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web do sistema DoaLink, desenvolvida em React para organizar doações em situações de enchente.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias Utilizadas
 
-## React Compiler
+- **React** — Biblioteca para construção de interfaces
+- **Vite** — Ferramenta de build e desenvolvimento
+- **React Router DOM** — Navegação entre páginas
+- **Axios** — Requisições HTTP para a API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Páginas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Página | Rota | Descrição |
+|--------|------|-----------|
+| Home | `/` | Visão geral com estatísticas e necessidades urgentes |
+| Pontos de Coleta | `/pontos` | Listagem e cadastro de pontos |
+| Itens | `/itens` | Catálogo de itens para doação |
+| Necessidades | `/necessidades` | O que cada ponto precisa receber |
+| Doadores | `/doadores` | Cadastro e listagem de doadores |
+| Fazer Doação | `/doacoes` | Registro de doações com atualização automática |
+
+---
+
+## Como Rodar o Projeto
+
+### Pré-requisitos
+- Node.js
+- Backend DoaLink rodando em `http://localhost:3000`
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/doalink-frontend.git
+
+# Entre na pasta
+cd doalink-frontend
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+```
+
+Acesse em `http://localhost:5173`
+
+---
+
+## Conexão com o Backend
+
+A URL base da API está configurada em `src/services/api.js`:
+
+```js
+const api = axios.create({
+  baseURL: 'http://localhost:3000'
+})
+```
